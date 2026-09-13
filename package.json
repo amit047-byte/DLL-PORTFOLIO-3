@@ -1,0 +1,19 @@
+{
+  "name": "amitabha-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal developer portfolio for Amitabha Ghosh - B.Tech CSE Student",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": [
+    "portfolio",
+    "software-engineer",
+    "btech-cse",
+    "web-development",
+    "amitabha-ghosh"
+  ],
+  "author": "Amitabha Ghosh <amitabhghosh3481@gmail.com>",
+  "license": "MIT"
+}

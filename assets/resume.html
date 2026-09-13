@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amitabha Ghosh - Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f1f5f9;
+      color: #0f172a;
+      line-height: 1.5;
+      padding: 40px 20px;
+    }
+    .resume-actions {
+      max-width: 820px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #0284c7;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover { background: #0369a1; }
+    .btn-secondary { background: #475569; }
+    .btn-secondary:hover { background: #334155; }
+    .resume-container {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 48px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border-top: 6px solid #0284c7;
+    }
+    header {
+      margin-bottom: 24px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 20px;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+    }
+    .role-title {
+      font-size: 1.05rem;
+      color: #0284c7;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .contact-bar {
+      font-size: 0.88rem;
+      color: #475569;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .contact-bar a {
+      color: #0284c7;
+      text-decoration: none;
+    }
+    section { margin-bottom: 22px; }
+    h2 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #0284c7;
+      border-bottom: 1.5px solid #cbd5e1;
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+    }
+    p, li { font-size: 0.92rem; color: #334155; }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 0.96rem;
+      color: #0f172a;
+      margin-bottom: 2px;
+    }
+    .date { color: #64748b; font-weight: 500; font-size: 0.88rem; }
+    .item-sub { color: #475569; font-size: 0.88rem; margin-bottom: 6px; }
+    ul { padding-left: 18px; margin-bottom: 10px; }
+    li { margin-bottom: 4px; }
+    .skill-row { margin-bottom: 6px; font-size: 0.92rem; }
+    .skill-label { font-weight: 700; color: #0f172a; }
+    @media print {
+      body { padding: 0; background: #fff; }
+      .resume-actions { display: none; }
+      .resume-container { box-shadow: none; padding: 20px; border-top: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume-actions">
+    <a href="../index.html" class="btn btn-secondary">← Back to Portfolio</a>
+    <div style="display: flex; gap: 10px;">
+      <button onclick="window.print()" class="btn">Print / Save as PDF</button>
+      <a href="Amitabha_Ghosh_Resume.pdf" download="Amitabha_Ghosh_Resume.pdf" class="btn">Direct PDF Download</a>
+    </div>
+  </div>
+
+  <div class="resume-container">
+    <header>
+      <h1>AMITABHA GHOSH</h1>
+      <p class="role-title">B.Tech in Computer Science & Engineering | Software Developer</p>
+      <div class="contact-bar">
+        <span>Email: <a href="mailto:amitabhghosh3481@gmail.com">amitabhghosh3481@gmail.com</a></span>
+        <span>GitHub: <a href="https://github.com/amit047-byte" target="_blank">github.com/amit047-byte</a></span>
+        <span>LinkedIn: <a href="https://www.linkedin.com/in/amitabha-ghosh-1792612a1" target="_blank">amitabha-ghosh-1792612a1</a></span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Professional Summary</h2>
+      <p>
+        Curious and driven B.Tech CSE student constantly exploring the intersection of algorithms, system architecture, and real-world problem-solving. Strong foundations in C++, Java, Python, and full-stack web development with a passion for writing clean, efficient, and well-structured code.
+      </p>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="item-header">
+        <span>Bachelor of Technology (B.Tech) in Computer Science & Engineering</span>
+        <span class="date">2022 – Present</span>
+      </div>
+      <p class="item-sub">Key Coursework: Data Structures & Algorithms, Object-Oriented Programming (OOP), Operating Systems, DBMS, Computer Networks, System Architecture Fundamentals.</p>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skill-row"><span class="skill-label">Languages:</span> C++, Java, Python, C, JavaScript (ES6+), TypeScript, SQL</div>
+      <div class="skill-row"><span class="skill-label">Web Development:</span> HTML5, CSS3, Modern JavaScript, React.js, Node.js, Express.js, RESTful APIs, WebSockets</div>
+      <div class="skill-row"><span class="skill-label">Core CS:</span> Data Structures & Algorithms (DSA), OOP, Operating Systems, DBMS, Computer Networks</div>
+      <div class="skill-row"><span class="skill-label">Tools & Workflow:</span> Git, GitHub, VS Code, Linux/Bash CLI, Postman, Vercel, Chrome DevTools</div>
+    </section>
+
+    <section>
+      <h2>Featured Projects</h2>
+
+      <div style="margin-bottom: 14px;">
+        <div class="item-header">
+          <span>Algorithmic Pathfinding & Graph Visualizer</span>
+          <span class="date">C++, JavaScript, Graph Algorithms</span>
+        </div>
+        <ul>
+          <li>Engineered an interactive graph algorithm visualizer implementing Dijkstra's, A*, BFS, and DFS traversals.</li>
+          <li>Optimized real-time state rendering pipeline for weighted graphs and custom obstacle placement.</li>
+          <li>Provided step-by-step heuristic debugging and execution time metrics.</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom: 14px;">
+        <div class="item-header">
+          <span>DevSync: Real-Time Collaborative Workspace</span>
+          <span class="date">Node.js, WebSockets, Express, Vanilla JS</span>
+        </div>
+        <ul>
+          <li>Developed a low-latency collaborative document and code synchronization platform with instant room sharing.</li>
+          <li>Implemented broadcast socket events for cursor tracking, presence management, and live Markdown preview.</li>
+          <li>Structured modular backend API handling authentication and session state.</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom: 14px;">
+        <div class="item-header">
+          <span>Distributed Task Queue & Cache Service</span>
+          <span class="date">Python, Asyncio, REST API Architecture</span>
+        </div>
+        <ul>
+          <li>Designed an asynchronous worker pool handling delayed and recurrent task execution with error resilience.</li>
+          <li>Implemented an in-memory thread-safe LRU caching layer reducing redundant API lookups by 65%.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Interests & Extracurriculars</h2>
+      <ul>
+        <li><strong>Problem Solving:</strong> Active solver on competitive programming platforms in C++ and Python.</li>
+        <li><strong>Systems Exploration:</strong> Deeply intrigued by operating system internals, memory management, and network protocols.</li>
+        <li><strong>Hobbies:</strong> Strategic chess, technology reading/blogs, and music.</li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
