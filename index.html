@@ -200,11 +200,14 @@
       background: #0f172a !important;
     }
 
-    /* Suppress duplicate default launchers */
+    /* Ensure Botpress Webchat widget and launcher sit on top */
+    #bp-web-widget,
+    .bpw-layout,
+    [class*="bpw-layout"],
     .bpw-widget-btn,
     [class*="bpw-widget-btn"],
-    #bp-web-widget-container > button {
-      display: none !important;
+    #bp-web-widget-container {
+      z-index: 9999999 !important;
     }
   </style>
 </head>

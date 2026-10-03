@@ -247,17 +247,13 @@ svg.sun-icon, svg.moon-icon {
   border-color: #ffffff;
 }
 
-/* Ensure Botpress default launcher doesn't create duplicate buttons */
-.bpw-widget-btn,
-[class*="bpw-widget-btn"],
-#bp-web-widget-container > button {
-  display: none !important;
-}
-
-/* Ensure Botpress chat iframe sits above everything properly */
+/* Ensure Botpress Webchat widget and launcher sit on top */
 #bp-web-widget,
 .bpw-layout,
-[class*="bpw-layout"] {
-  z-index: 999999 !important;
+[class*="bpw-layout"],
+.bpw-widget-btn,
+[class*="bpw-widget-btn"],
+#bp-web-widget-container {
+  z-index: 9999999 !important;
 }
 
