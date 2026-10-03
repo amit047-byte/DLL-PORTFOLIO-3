@@ -61,39 +61,41 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
   }, { passive: true });
 
-  // 5. Skill Progress Sliding Bar Animation
-  const skillsSection = document.getElementById('skills');
-  const skillBars = document.querySelectorAll('.skill-progress-bar');
+  // 5. Skill Progress Sliding Bar Animation (Animates dynamically on scroll up & down)
+  const skillCards = document.querySelectorAll('.skill-card');
 
-  if (skillBars.length > 0) {
-    let animated = false;
-    const animateSkillBars = () => {
-      if (animated) return;
-      animated = true;
-      skillBars.forEach((bar, index) => {
-        const targetWidth = bar.getAttribute('data-progress');
-        if (targetWidth) {
-          // Stagger slightly for a cascading fluid motion
-          setTimeout(() => {
-            bar.style.width = targetWidth;
-          }, index * 40);
-        }
-      });
-    };
-
-    if ('IntersectionObserver' in window && skillsSection) {
-      const observer = new IntersectionObserver((entries, obs) => {
+  if (skillCards.length > 0) {
+    if ('IntersectionObserver' in window) {
+      const cardObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
+          const bar = entry.target.querySelector('.skill-progress-bar');
+          if (!bar) return;
+          const targetWidth = bar.getAttribute('data-progress');
+
           if (entry.isIntersecting) {
-            animateSkillBars();
-            obs.unobserve(entry.target);
+            // Slide smoothly open to target progress when scrolled into view (up or down)
+            setTimeout(() => {
+              bar.style.width = targetWidth;
+            }, 60);
+          } else {
+            // Reset to 0% silently when scrolled out of view so it re-slides when scrolling back up or down
+            bar.style.transition = 'none';
+            bar.style.width = '0%';
+            void bar.offsetWidth; // Reflow to apply 0% immediately
+            bar.style.transition = '';
           }
         });
-      }, { threshold: 0.15 });
+      }, {
+        threshold: 0.15
+      });
 
-      observer.observe(skillsSection);
+      skillCards.forEach((card) => cardObserver.observe(card));
     } else {
-      setTimeout(animateSkillBars, 500);
+      // Fallback if IntersectionObserver is unsupported
+      skillCards.forEach((card) => {
+        const bar = card.querySelector('.skill-progress-bar');
+        if (bar) bar.style.width = bar.getAttribute('data-progress');
+      });
     }
   }
 });
