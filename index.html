@@ -15,9 +15,42 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   
-  <link rel="stylesheet" href="styles.css?v=2.0" />
+  <link rel="stylesheet" href="styles.css?v=3.0" />
 
   <style>
+    /* Skill Progress Sliding Bar Styles & Glowing Wave */
+    .skill-progress-bar {
+      width: 0%;
+      height: 100%;
+      border-radius: 9999px;
+      background: linear-gradient(90deg, #0284c7 0%, #38bdf8 50%, #818cf8 100%) !important;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.45);
+      transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1) !important;
+      will-change: width;
+      display: block;
+    }
+
+    .skill-progress-shimmer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.45) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: translateX(-100%);
+      animation: skillBarGlow 2.5s infinite ease-in-out;
+    }
+
+    @keyframes skillBarGlow {
+      0% { transform: translateX(-100%); }
+      50%, 100% { transform: translateX(100%); }
+    }
+
     /* Bulletproof Floating AI Chatbot Widget Styles */
     #ai-bot-floating-container {
       position: fixed !important;
@@ -765,6 +798,51 @@
     });
   </script>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=3.0"></script>
+  <script>
+    // Bulletproof Skill Progress Sliding Bar Animation (Scroll up & down reactive)
+    (function() {
+      function initSkillSlider() {
+        var skillCards = document.querySelectorAll('.skill-card');
+        if (!skillCards || skillCards.length === 0) return;
+
+        if ('IntersectionObserver' in window) {
+          var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+              var bar = entry.target.querySelector('.skill-progress-bar');
+              if (!bar) return;
+              var target = bar.getAttribute('data-progress');
+              if (!target) return;
+
+              if (entry.isIntersecting) {
+                setTimeout(function() {
+                  bar.style.width = target;
+                }, 50);
+              } else {
+                bar.style.width = '0%';
+              }
+            });
+          }, {
+            threshold: 0.1
+          });
+
+          skillCards.forEach(function(card) {
+            observer.observe(card);
+          });
+        } else {
+          skillCards.forEach(function(card) {
+            var bar = card.querySelector('.skill-progress-bar');
+            if (bar) bar.style.width = bar.getAttribute('data-progress');
+          });
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initSkillSlider);
+      } else {
+        initSkillSlider();
+      }
+    })();
+  </script>
 </body>
 </html>

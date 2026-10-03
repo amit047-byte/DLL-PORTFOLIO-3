@@ -71,22 +71,20 @@ document.addEventListener('DOMContentLoaded', () => {
           const bar = entry.target.querySelector('.skill-progress-bar');
           if (!bar) return;
           const targetWidth = bar.getAttribute('data-progress');
+          if (!targetWidth) return;
 
           if (entry.isIntersecting) {
             // Slide smoothly open to target progress when scrolled into view (up or down)
             setTimeout(() => {
               bar.style.width = targetWidth;
-            }, 60);
+            }, 50);
           } else {
-            // Reset to 0% silently when scrolled out of view so it re-slides when scrolling back up or down
-            bar.style.transition = 'none';
+            // Reset to 0% when scrolled out of view so it re-slides when scrolling back up or down
             bar.style.width = '0%';
-            void bar.offsetWidth; // Reflow to apply 0% immediately
-            bar.style.transition = '';
           }
         });
       }, {
-        threshold: 0.15
+        threshold: 0.1
       });
 
       skillCards.forEach((card) => cardObserver.observe(card));
