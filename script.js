@@ -61,48 +61,53 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
   }, { passive: true });
 
-  // 5. Botpress AI Assistant Floating Widget Logic
+  // 5. Botpress AI Assistant Integration
   const botBtn = document.getElementById('ai-bot-launcher-btn');
-  const botCloseBtn = document.getElementById('ai-bot-close-btn');
-  const botWindow = document.getElementById('ai-bot-window');
   const botIconChat = document.getElementById('bot-icon-chat');
   const botIconClose = document.getElementById('bot-icon-close');
   const botTooltip = document.getElementById('ai-bot-tooltip');
   let isBotOpen = false;
 
-  function setBotState(open) {
+  function updateBotIcon(open) {
     isBotOpen = open;
-    if (open) {
-      botWindow?.classList.add('active');
-      if (botIconChat) botIconChat.style.display = 'none';
-      if (botIconClose) botIconClose.style.display = 'block';
-      if (botTooltip) botTooltip.style.opacity = '0';
-      if (window.botpress && typeof window.botpress.open === 'function') {
-        try { window.botpress.open(); } catch (e) {}
-      }
-    } else {
-      botWindow?.classList.remove('active');
-      if (botIconChat) botIconChat.style.display = 'block';
-      if (botIconClose) botIconClose.style.display = 'none';
-      if (botTooltip) botTooltip.style.opacity = '1';
-      if (window.botpress && typeof window.botpress.close === 'function') {
-        try { window.botpress.close(); } catch (e) {}
+    if (botIconChat && botIconClose) {
+      if (open) {
+        botIconChat.style.display = 'none';
+        botIconClose.style.display = 'block';
+        if (botTooltip) botTooltip.style.opacity = '0';
+      } else {
+        botIconChat.style.display = 'block';
+        botIconClose.style.display = 'none';
+        if (botTooltip) botTooltip.style.opacity = '1';
       }
     }
   }
 
   function toggleBot() {
-    setBotState(!isBotOpen);
+    if (window.botpress) {
+      if (typeof window.botpress.toggle === 'function') {
+        window.botpress.toggle();
+      } else if (typeof window.botpress.open === 'function') {
+        if (!isBotOpen) {
+          window.botpress.open();
+          updateBotIcon(true);
+        } else {
+          window.botpress.close();
+          updateBotIcon(false);
+        }
+      }
+    } else {
+      console.log('Botpress is initializing, please wait a moment...');
+    }
   }
 
   botBtn?.addEventListener('click', toggleBot);
-  botCloseBtn?.addEventListener('click', () => setBotState(false));
 
-  // Listen to Botpress events if available
+  // Hook into native Botpress events
   function setupBotpressEvents() {
     if (window.botpress && typeof window.botpress.on === 'function') {
-      window.botpress.on('webchat:opened', () => setBotState(true));
-      window.botpress.on('webchat:closed', () => setBotState(false));
+      window.botpress.on('webchat:opened', () => updateBotIcon(true));
+      window.botpress.on('webchat:closed', () => updateBotIcon(false));
     }
   }
 
