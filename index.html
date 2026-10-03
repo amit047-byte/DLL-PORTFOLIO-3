@@ -504,6 +504,37 @@
     Email copied to clipboard!
   </div>
 
+  <!-- Floating AI Chatbot Widget -->
+  <div id="ai-bot-floating-container" class="ai-bot-floating-container">
+    <!-- Tooltip / Badge -->
+    <div id="ai-bot-tooltip" class="ai-bot-tooltip">
+      <span class="ai-bot-tooltip-dot"></span>
+      <span>Chat with AI Assistant</span>
+    </div>
+
+    <!-- Floating Bot Button -->
+    <button id="ai-bot-launcher-btn" type="button" aria-label="Open AI Chatbot" class="ai-bot-btn">
+      <div class="ai-bot-btn-pulse"></div>
+      <div class="ai-bot-status-badge" title="AI Bot Online"></div>
+
+      <!-- Chat / Robot Icon -->
+      <svg id="bot-icon-chat" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 8V4H8"></path>
+        <rect width="16" height="12" x="4" y="8" rx="2"></rect>
+        <path d="M2 14h2"></path>
+        <path d="M20 14h2"></path>
+        <path d="M15 13v2"></path>
+        <path d="M9 13v2"></path>
+      </svg>
+
+      <!-- Close Icon (when open) -->
+      <svg id="bot-icon-close" class="w-6 h-6" style="display: none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
   <!-- Botpress Webchat Integration -->
   <script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js"></script>
   <script src="https://files.bpcontent.cloud/2026/09/30/03/20260930032717-WGO53VE7.js" defer></script>

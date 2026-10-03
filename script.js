@@ -60,4 +60,81 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
     document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
   }, { passive: true });
+
+  // 5. Botpress AI Assistant Floating Widget Logic
+  const botBtn = document.getElementById('ai-bot-launcher-btn');
+  const botIconChat = document.getElementById('bot-icon-chat');
+  const botIconClose = document.getElementById('bot-icon-close');
+  const botTooltip = document.getElementById('ai-bot-tooltip');
+  let isBotOpen = false;
+
+  function updateBotIcon(open) {
+    if (botIconChat && botIconClose) {
+      if (open) {
+        botIconChat.style.display = 'none';
+        botIconClose.style.display = 'block';
+        if (botTooltip) botTooltip.style.opacity = '0';
+      } else {
+        botIconChat.style.display = 'block';
+        botIconClose.style.display = 'none';
+        if (botTooltip) botTooltip.style.opacity = '1';
+      }
+    }
+  }
+
+  function setupBotpressEvents() {
+    if (window.botpress && typeof window.botpress.on === 'function') {
+      window.botpress.on('webchat:opened', () => {
+        isBotOpen = true;
+        updateBotIcon(true);
+      });
+      window.botpress.on('webchat:closed', () => {
+        isBotOpen = false;
+        updateBotIcon(false);
+      });
+    }
+  }
+
+  function toggleBot() {
+    if (window.botpress) {
+      if (typeof window.botpress.toggle === 'function') {
+        window.botpress.toggle();
+      } else if (typeof window.botpress.open === 'function' && !isBotOpen) {
+        window.botpress.open();
+        isBotOpen = true;
+        updateBotIcon(true);
+      } else if (typeof window.botpress.close === 'function' && isBotOpen) {
+        window.botpress.close();
+        isBotOpen = false;
+        updateBotIcon(false);
+      }
+    } else {
+      console.log('Botpress is initializing...');
+      let attempts = 0;
+      const interval = setInterval(() => {
+        attempts++;
+        if (window.botpress && (typeof window.botpress.open === 'function' || typeof window.botpress.toggle === 'function')) {
+          clearInterval(interval);
+          if (typeof window.botpress.toggle === 'function') {
+            window.botpress.toggle();
+          } else {
+            window.botpress.open();
+            isBotOpen = true;
+            updateBotIcon(true);
+          }
+        } else if (attempts > 10) {
+          clearInterval(interval);
+        }
+      }, 300);
+    }
+  }
+
+  botBtn?.addEventListener('click', toggleBot);
+
+  // Hook into Botpress when ready
+  setupBotpressEvents();
+  window.addEventListener('load', setupBotpressEvents);
+  if (window.botpress && typeof window.botpress.on === 'function') {
+    window.botpress.on('webchat:ready', setupBotpressEvents);
+  }
 });
