@@ -60,4 +60,40 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
     document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
   }, { passive: true });
+
+  // 5. Skill Progress Sliding Bar Animation
+  const skillsSection = document.getElementById('skills');
+  const skillBars = document.querySelectorAll('.skill-progress-bar');
+
+  if (skillBars.length > 0) {
+    let animated = false;
+    const animateSkillBars = () => {
+      if (animated) return;
+      animated = true;
+      skillBars.forEach((bar, index) => {
+        const targetWidth = bar.getAttribute('data-progress');
+        if (targetWidth) {
+          // Stagger slightly for a cascading fluid motion
+          setTimeout(() => {
+            bar.style.width = targetWidth;
+          }, index * 40);
+        }
+      });
+    };
+
+    if ('IntersectionObserver' in window && skillsSection) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateSkillBars();
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      observer.observe(skillsSection);
+    } else {
+      setTimeout(animateSkillBars, 500);
+    }
+  }
 });

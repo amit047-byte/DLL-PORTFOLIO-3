@@ -335,107 +335,217 @@
           </p>
         </div>
 
-        <!-- Skill Items Grid -->
+        <!-- Skill Items Grid with Sliding Progress Bars -->
         <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           
-          <div class="flex items-center justify-between rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/30 hover:shadow-sm">
-            <div class="flex items-center gap-3">
-              <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          <!-- C++ -->
+          <div class="skill-card flex flex-col justify-between rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/40 hover:shadow-md">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <span class="font-medium text-foreground">C++</span>
               </div>
-              <span class="font-medium text-foreground">C++</span>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-primary">90%</span>
+                <span class="text-[11px] font-medium text-muted-foreground px-2 py-0.5 rounded bg-secondary">Advanced</span>
+              </div>
             </div>
-            <span class="text-xs font-medium text-muted-foreground">Advanced</span>
+            <div class="mt-3.5 h-2 w-full rounded-full bg-secondary overflow-hidden relative">
+              <div class="skill-progress-bar h-full rounded-full bg-gradient-to-r from-primary to-sky-400 relative overflow-hidden" data-progress="90%">
+                <div class="skill-progress-shimmer"></div>
+              </div>
+            </div>
           </div>
 
-          <div class="flex items-center justify-between rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/30 hover:shadow-sm">
-            <div class="flex items-center gap-3">
-              <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          <!-- Java -->
+          <div class="skill-card flex flex-col justify-between rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/40 hover:shadow-md">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <span class="font-medium text-foreground">Java</span>
               </div>
-              <span class="font-medium text-foreground">Java</span>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-primary">80%</span>
+                <span class="text-[11px] font-medium text-muted-foreground px-2 py-0.5 rounded bg-secondary">Intermediate</span>
+              </div>
             </div>
-            <span class="text-xs font-medium text-muted-foreground">Intermediate</span>
+            <div class="mt-3.5 h-2 w-full rounded-full bg-secondary overflow-hidden relative">
+              <div class="skill-progress-bar h-full rounded-full bg-gradient-to-r from-primary to-sky-400 relative overflow-hidden" data-progress="80%">
+                <div class="skill-progress-shimmer"></div>
+              </div>
+            </div>
           </div>
 
-          <div class="flex items-center justify-between rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/30 hover:shadow-sm">
-            <div class="flex items-center gap-3">
-              <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          <!-- Python -->
+          <div class="skill-card flex flex-col justify-between rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/40 hover:shadow-md">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <span class="font-medium text-foreground">Python</span>
               </div>
-              <span class="font-medium text-foreground">Python</span>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-primary">85%</span>
+                <span class="text-[11px] font-medium text-muted-foreground px-2 py-0.5 rounded bg-secondary">Intermediate</span>
+              </div>
             </div>
-            <span class="text-xs font-medium text-muted-foreground">Intermediate</span>
+            <div class="mt-3.5 h-2 w-full rounded-full bg-secondary overflow-hidden relative">
+              <div class="skill-progress-bar h-full rounded-full bg-gradient-to-r from-primary to-sky-400 relative overflow-hidden" data-progress="85%">
+                <div class="skill-progress-shimmer"></div>
+              </div>
+            </div>
           </div>
 
-          <div class="flex items-center justify-between rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/30 hover:shadow-sm">
-            <div class="flex items-center gap-3">
-              <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line></svg>
+          <!-- HTML & CSS -->
+          <div class="skill-card flex flex-col justify-between rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/40 hover:shadow-md">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line></svg>
+                </div>
+                <span class="font-medium text-foreground">HTML &amp; CSS</span>
               </div>
-              <span class="font-medium text-foreground">HTML &amp; CSS</span>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-primary">92%</span>
+                <span class="text-[11px] font-medium text-muted-foreground px-2 py-0.5 rounded bg-secondary">Advanced</span>
+              </div>
             </div>
-            <span class="text-xs font-medium text-muted-foreground">Advanced</span>
+            <div class="mt-3.5 h-2 w-full rounded-full bg-secondary overflow-hidden relative">
+              <div class="skill-progress-bar h-full rounded-full bg-gradient-to-r from-primary to-sky-400 relative overflow-hidden" data-progress="92%">
+                <div class="skill-progress-shimmer"></div>
+              </div>
+            </div>
           </div>
 
-          <div class="flex items-center justify-between rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/30 hover:shadow-sm">
-            <div class="flex items-center gap-3">
-              <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          <!-- JavaScript -->
+          <div class="skill-card flex flex-col justify-between rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/40 hover:shadow-md">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <span class="font-medium text-foreground">JavaScript</span>
               </div>
-              <span class="font-medium text-foreground">JavaScript</span>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-primary">85%</span>
+                <span class="text-[11px] font-medium text-muted-foreground px-2 py-0.5 rounded bg-secondary">Intermediate</span>
+              </div>
             </div>
-            <span class="text-xs font-medium text-muted-foreground">Intermediate</span>
+            <div class="mt-3.5 h-2 w-full rounded-full bg-secondary overflow-hidden relative">
+              <div class="skill-progress-bar h-full rounded-full bg-gradient-to-r from-primary to-sky-400 relative overflow-hidden" data-progress="85%">
+                <div class="skill-progress-shimmer"></div>
+              </div>
+            </div>
           </div>
 
-          <div class="flex items-center justify-between rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/30 hover:shadow-sm">
-            <div class="flex items-center gap-3">
-              <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line></svg>
+          <!-- React -->
+          <div class="skill-card flex flex-col justify-between rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/40 hover:shadow-md">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line></svg>
+                </div>
+                <span class="font-medium text-foreground">React</span>
               </div>
-              <span class="font-medium text-foreground">React</span>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-primary">78%</span>
+                <span class="text-[11px] font-medium text-muted-foreground px-2 py-0.5 rounded bg-secondary">Intermediate</span>
+              </div>
             </div>
-            <span class="text-xs font-medium text-muted-foreground">Intermediate</span>
+            <div class="mt-3.5 h-2 w-full rounded-full bg-secondary overflow-hidden relative">
+              <div class="skill-progress-bar h-full rounded-full bg-gradient-to-r from-primary to-sky-400 relative overflow-hidden" data-progress="78%">
+                <div class="skill-progress-shimmer"></div>
+              </div>
+            </div>
           </div>
 
-          <div class="flex items-center justify-between rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/30 hover:shadow-sm">
-            <div class="flex items-center gap-3">
-              <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          <!-- Node.js -->
+          <div class="skill-card flex flex-col justify-between rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/40 hover:shadow-md">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <span class="font-medium text-foreground">Node.js</span>
               </div>
-              <span class="font-medium text-foreground">Node.js</span>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-primary">70%</span>
+                <span class="text-[11px] font-medium text-muted-foreground px-2 py-0.5 rounded bg-secondary">Beginner</span>
+              </div>
             </div>
-            <span class="text-xs font-medium text-muted-foreground">Beginner</span>
+            <div class="mt-3.5 h-2 w-full rounded-full bg-secondary overflow-hidden relative">
+              <div class="skill-progress-bar h-full rounded-full bg-gradient-to-r from-primary to-sky-400 relative overflow-hidden" data-progress="70%">
+                <div class="skill-progress-shimmer"></div>
+              </div>
+            </div>
           </div>
 
-          <div class="flex items-center justify-between rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/30 hover:shadow-sm">
-            <div class="flex items-center gap-3">
-              <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5v14a9 3 0 0 0 18 0V5"></path><path d="M3 12a9 3 0 0 0 18 0"></path></svg>
+          <!-- SQL -->
+          <div class="skill-card flex flex-col justify-between rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/40 hover:shadow-md">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5v14a9 3 0 0 0 18 0V5"></path><path d="M3 12a9 3 0 0 0 18 0"></path></svg>
+                </div>
+                <span class="font-medium text-foreground">SQL</span>
               </div>
-              <span class="font-medium text-foreground">SQL</span>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-primary">80%</span>
+                <span class="text-[11px] font-medium text-muted-foreground px-2 py-0.5 rounded bg-secondary">Intermediate</span>
+              </div>
             </div>
-            <span class="text-xs font-medium text-muted-foreground">Intermediate</span>
+            <div class="mt-3.5 h-2 w-full rounded-full bg-secondary overflow-hidden relative">
+              <div class="skill-progress-bar h-full rounded-full bg-gradient-to-r from-primary to-sky-400 relative overflow-hidden" data-progress="80%">
+                <div class="skill-progress-shimmer"></div>
+              </div>
+            </div>
           </div>
 
-          <div class="flex items-center justify-between rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/30 hover:shadow-sm">
-            <div class="flex items-center gap-3">
-              <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path></svg>
+          <!-- Git & GitHub -->
+          <div class="skill-card flex flex-col justify-between rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/40 hover:shadow-md">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path></svg>
+                </div>
+                <span class="font-medium text-foreground">Git &amp; GitHub</span>
               </div>
-              <span class="font-medium text-foreground">Git &amp; GitHub</span>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-primary">88%</span>
+                <span class="text-[11px] font-medium text-muted-foreground px-2 py-0.5 rounded bg-secondary">Advanced</span>
+              </div>
             </div>
-            <span class="text-xs font-medium text-muted-foreground">Intermediate</span>
+            <div class="mt-3.5 h-2 w-full rounded-full bg-secondary overflow-hidden relative">
+              <div class="skill-progress-bar h-full rounded-full bg-gradient-to-r from-primary to-sky-400 relative overflow-hidden" data-progress="88%">
+                <div class="skill-progress-shimmer"></div>
+              </div>
+            </div>
           </div>
 
-          <div class="flex items-center justify-between rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/30 hover:shadow-sm">
-            <div class="flex items-center gap-3">
-              <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line></svg>
+          <!-- Data Structures -->
+          <div class="skill-card flex flex-col justify-between rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/40 hover:shadow-md">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line></svg>
+                </div>
+                <span class="font-medium text-foreground">Data Structures</span>
               </div>
-              <span class="font-medium text-foreground">Data Structures</span>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-primary">90%</span>
+                <span class="text-[11px] font-medium text-muted-foreground px-2 py-0.5 rounded bg-secondary">Advanced</span>
+              </div>
             </div>
-            <span class="text-xs font-medium text-muted-foreground">Advanced</span>
+            <div class="mt-3.5 h-2 w-full rounded-full bg-secondary overflow-hidden relative">
+              <div class="skill-progress-bar h-full rounded-full bg-gradient-to-r from-primary to-sky-400 relative overflow-hidden" data-progress="90%">
+                <div class="skill-progress-shimmer"></div>
+              </div>
+            </div>
           </div>
 
         </div>
