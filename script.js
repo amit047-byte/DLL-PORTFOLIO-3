@@ -68,6 +68,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const botTooltip = document.getElementById('ai-bot-tooltip');
   let isBotOpen = false;
 
+  const botpressConfig = {
+    botId: "f5a14552-e933-446b-bc19-f604148eaa2b",
+    configuration: {
+      version: "v2",
+      website: {},
+      email: {},
+      phone: {},
+      termsOfService: {},
+      privacyPolicy: {},
+      feedbackEnabled: true,
+      footer: "[⚡ by Botpress](https://botpress.com/?from=webchat)",
+      allowFileUpload: true,
+      soundEnabled: true,
+      conversationHistory: true,
+      homePageEnabled: true,
+      welcomeHeading: "Hi there, how can we help?",
+      welcomeSubtitle: "Tap a starting point or ask in your own words.",
+      conversationStartersEnabled: false,
+      conversationStarters: [],
+      conversationStartersDisplayStyle: "cards",
+      citationsEnabled: true,
+      agentPresenceEnabled: true
+    },
+    clientId: "b4ad7f73-e419-42db-b8ce-7f36d5d58289"
+  };
+
   function updateBotIcon(open) {
     isBotOpen = open;
     if (botIconChat && botIconClose) {
@@ -85,19 +111,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function toggleBot() {
     if (window.botpress) {
-      if (typeof window.botpress.toggle === 'function') {
-        window.botpress.toggle();
-      } else if (typeof window.botpress.open === 'function') {
-        if (!isBotOpen) {
-          window.botpress.open();
-          updateBotIcon(true);
-        } else {
-          window.botpress.close();
-          updateBotIcon(false);
+      if (!window.botpress.clientId && typeof window.botpress.init === 'function') {
+        try {
+          window.botpress.init(botpressConfig);
+        } catch (e) {
+          console.warn('Botpress init:', e);
         }
       }
+
+      if (!isBotOpen) {
+        if (typeof window.botpress.open === 'function') {
+          window.botpress.open();
+        } else if (typeof window.botpress.toggle === 'function') {
+          window.botpress.toggle();
+        }
+        updateBotIcon(true);
+      } else {
+        if (typeof window.botpress.close === 'function') {
+          window.botpress.close();
+        } else if (typeof window.botpress.toggle === 'function') {
+          window.botpress.toggle();
+        }
+        updateBotIcon(false);
+      }
     } else {
-      console.log('Botpress is initializing, please wait a moment...');
+      let attempts = 0;
+      const retry = setInterval(() => {
+        attempts++;
+        if (window.botpress) {
+          clearInterval(retry);
+          if (!window.botpress.clientId && typeof window.botpress.init === 'function') {
+            window.botpress.init(botpressConfig);
+          }
+          if (typeof window.botpress.open === 'function') {
+            window.botpress.open();
+          } else if (typeof window.botpress.toggle === 'function') {
+            window.botpress.toggle();
+          }
+          updateBotIcon(true);
+        } else if (attempts > 30) {
+          clearInterval(retry);
+        }
+      }, 100);
     }
   }
 
