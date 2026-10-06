@@ -574,191 +574,109 @@
         <div class="max-w-2xl">
           <p class="text-sm font-medium uppercase tracking-widest text-muted-foreground">Credentials</p>
           <h2 class="mt-3 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">
-            Certifications &amp; Badges
+            Certifications &amp; Achievements
           </h2>
           <p class="mt-4 text-muted-foreground">
-            Professional certifications and technical skill assessments validating core competencies in software engineering, algorithms, and web development.
+            Official certifications and workshops validating practical competencies. Click on any certificate image to view in full resolution.
           </p>
         </div>
 
-        <div class="mt-12 grid gap-6 md:grid-cols-2">
+        <div class="mt-12 grid gap-8 lg:grid-cols-2">
           
-          <!-- Cert 1: Problem Solving -->
-          <div class="group flex flex-col justify-between rounded-2xl border border-border bg-background p-6 transition-all hover:border-primary/40 hover:shadow-md">
+          <!-- Certificate: Unlocking Agentic AI -->
+          <div class="group flex flex-col justify-between rounded-2xl border border-border bg-background p-6 transition-all hover:border-primary/40 hover:shadow-lg">
             <div>
-              <div class="flex items-start justify-between gap-4">
-                <div class="flex items-center gap-3">
-                  <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
-                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="16 18 22 12 16 6"></polyline>
-                      <polyline points="8 6 2 12 8 18"></polyline>
+              <!-- Certificate Image Preview (Click to Enlarge) -->
+              <div 
+                class="cert-thumbnail-wrapper relative cursor-pointer overflow-hidden rounded-xl border border-border bg-muted shadow-sm transition-all hover:shadow-md"
+                onclick="openCertModal('assets/images/certificate-agentic-ai.jpg', 'Unlocking Agentic AI — Google Developer Groups &amp; JECRC University', 'Certificate of Participation - Unlocking Agentic AI - Amitabha Ghosh')"
+                title="Click to enlarge certificate"
+              >
+                <img 
+                  src="assets/images/certificate-agentic-ai.jpg" 
+                  alt="Certificate of Participation - Unlocking Agentic AI - Amitabha Ghosh" 
+                  class="w-full object-cover transition-transform duration-300 hover:scale-[1.02]"
+                  loading="lazy"
+                >
+                <div class="cert-thumbnail-overlay">
+                  <span class="inline-flex items-center gap-1.5 rounded-full bg-black/75 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm">
+                    <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                      <line x1="11" y1="8" x2="11" y2="14"></line>
+                      <line x1="8" y1="11" x2="14" y2="11"></line>
                     </svg>
-                  </div>
-                  <div>
-                    <span class="text-xs font-semibold uppercase tracking-wider text-muted-foreground">HackerRank</span>
-                    <h3 class="text-base font-bold text-foreground group-hover:text-primary transition-colors">Problem Solving (Intermediate)</h3>
-                  </div>
+                    Click to enlarge
+                  </span>
+                  <span class="rounded-full bg-emerald-500/90 px-2.5 py-1 text-[11px] font-semibold text-white">
+                    Verified
+                  </span>
                 </div>
-                <span class="inline-flex items-center gap-1 shrink-0 rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-[11px] font-medium text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-                  <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  Verified
-                </span>
               </div>
-              <p class="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Demonstrated core algorithmic competence covering advanced data structures, graph traversals, dynamic programming, and optimal time-space complexity analysis.
-              </p>
-              <div class="mt-4 flex flex-wrap gap-2">
-                <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">Data Structures</span>
-                <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">Algorithms</span>
-                <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">C++</span>
-                <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">Optimization</span>
+
+              <!-- Certificate Details -->
+              <div class="mt-5">
+                <div class="flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-2">
+                    <!-- Badge Icon -->
+                    <div class="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 12 17 22 12"></polyline>
+                      </svg>
+                    </div>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-muted-foreground">GDG Jaipur × JECRC University</span>
+                  </div>
+                  <span class="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-[11px] font-medium text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                    <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Verified Credential
+                  </span>
+                </div>
+
+                <h3 class="mt-2.5 text-lg font-bold text-foreground">
+                  Unlocking Agentic AI
+                </h3>
+                <p class="text-xs font-medium text-muted-foreground">
+                  Certificate of Participation &bull; Organized by JUMAKERSPACE &amp; Google Developer Groups
+                </p>
+
+                <p class="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  Successfully completed specialized hands-on workshop focused on Agentic AI workflows, autonomous AI agents, machine learning orchestration, and practical developer implementations.
+                </p>
+
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">Agentic AI</span>
+                  <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">Autonomous Agents</span>
+                  <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">Machine Learning</span>
+                  <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">GDG</span>
+                  <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">JECRC University</span>
+                </div>
               </div>
             </div>
+
+            <!-- Card Footer -->
             <div class="mt-6 flex items-center justify-between border-t border-border pt-4">
-              <span class="text-xs text-muted-foreground">Issued 2024</span>
-              <a href="https://www.hackerrank.com/certificates" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline">
-                Show Credential
-                <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
+              <span class="text-xs text-muted-foreground flex items-center gap-1">
+                <span>📍</span> Jaipur, Rajasthan
+              </span>
+              <button 
+                type="button" 
+                onclick="openCertModal('assets/images/certificate-agentic-ai.jpg', 'Unlocking Agentic AI — Google Developer Groups &amp; JECRC University', 'Certificate of Participation - Unlocking Agentic AI - Amitabha Ghosh')" 
+                class="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-1.5 text-xs font-semibold text-foreground transition-all hover:bg-accent hover:border-primary/40 cursor-pointer"
+              >
+                <svg class="h-3.5 w-3.5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
                 </svg>
-              </a>
+                View Full Size
+              </button>
             </div>
           </div>
 
-          <!-- Cert 2: Meta Full-Stack / Web Development -->
-          <div class="group flex flex-col justify-between rounded-2xl border border-border bg-background p-6 transition-all hover:border-primary/40 hover:shadow-md">
-            <div>
-              <div class="flex items-start justify-between gap-4">
-                <div class="flex items-center gap-3">
-                  <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400">
-                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                      <polyline points="2 17 12 22 22 17"></polyline>
-                      <polyline points="2 12 12 17 22 12"></polyline>
-                    </svg>
-                  </div>
-                  <div>
-                    <span class="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Meta</span>
-                    <h3 class="text-base font-bold text-foreground group-hover:text-primary transition-colors">Front-End &amp; Web Development</h3>
-                  </div>
-                </div>
-                <span class="inline-flex items-center gap-1 shrink-0 rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-[11px] font-medium text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-                  <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  Verified
-                </span>
-              </div>
-              <p class="mt-4 text-sm leading-relaxed text-muted-foreground">
-                In-depth curriculum in modern UI engineering, React component lifecycles and hooks, responsive layouts, web accessibility, and client-side routing.
-              </p>
-              <div class="mt-4 flex flex-wrap gap-2">
-                <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">React</span>
-                <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">JavaScript (ES6+)</span>
-                <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">CSS3 &amp; HTML5</span>
-                <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">UI/UX</span>
-              </div>
-            </div>
-            <div class="mt-6 flex items-center justify-between border-t border-border pt-4">
-              <span class="text-xs text-muted-foreground">Issued 2024</span>
-              <a href="https://www.coursera.org" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline">
-                Show Credential
-                <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <!-- Cert 3: University of Michigan - Python for Everybody -->
-          <div class="group flex flex-col justify-between rounded-2xl border border-border bg-background p-6 transition-all hover:border-primary/40 hover:shadow-md">
-            <div>
-              <div class="flex items-start justify-between gap-4">
-                <div class="flex items-center gap-3">
-                  <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400">
-                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="4" y="4" width="16" height="16" rx="2"></rect>
-                      <path d="M9 9h6v6H9z"></path>
-                      <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <span class="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Univ. of Michigan</span>
-                    <h3 class="text-base font-bold text-foreground group-hover:text-primary transition-colors">Python for Everybody Specialization</h3>
-                  </div>
-                </div>
-                <span class="inline-flex items-center gap-1 shrink-0 rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-[11px] font-medium text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-                  <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  Verified
-                </span>
-              </div>
-              <p class="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Comprehensive training encompassing fundamental data structures, networked application programming, Web Scraping, and relational database design with SQLite.
-              </p>
-              <div class="mt-4 flex flex-wrap gap-2">
-                <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">Python</span>
-                <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">Data Structures</span>
-                <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">SQLite</span>
-                <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">APIs</span>
-              </div>
-            </div>
-            <div class="mt-6 flex items-center justify-between border-t border-border pt-4">
-              <span class="text-xs text-muted-foreground">Issued 2023</span>
-              <a href="https://www.coursera.org" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline">
-                Show Credential
-                <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <!-- Cert 4: Postman API Fundamentals -->
-          <div class="group flex flex-col justify-between rounded-2xl border border-border bg-background p-6 transition-all hover:border-primary/40 hover:shadow-md">
-            <div>
-              <div class="flex items-start justify-between gap-4">
-                <div class="flex items-center gap-3">
-                  <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-orange-500/10 text-orange-600 dark:text-orange-400">
-                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <span class="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Postman</span>
-                    <h3 class="text-base font-bold text-foreground group-hover:text-primary transition-colors">API Fundamentals Student Expert</h3>
-                  </div>
-                </div>
-                <span class="inline-flex items-center gap-1 shrink-0 rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-[11px] font-medium text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-                  <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  Verified
-                </span>
-              </div>
-              <p class="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Hands-on practical certification in constructing HTTP requests, automating test scripts, manipulating environment variables, and consuming RESTful endpoints.
-              </p>
-              <div class="mt-4 flex flex-wrap gap-2">
-                <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">Postman</span>
-                <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">REST APIs</span>
-                <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">HTTP Testing</span>
-                <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">JSON</span>
-              </div>
-            </div>
-            <div class="mt-6 flex items-center justify-between border-t border-border pt-4">
-              <span class="text-xs text-muted-foreground">Issued 2024</span>
-              <a href="https://badgr.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline">
-                Show Credential
-                <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </a>
-            </div>
-          </div>
+          <!-- To add more certificates: duplicate the card above and update the image src, title, and description -->
 
         </div>
       </div>
@@ -1012,5 +930,19 @@
       }
     })();
   </script>
+
+  <!-- Certificate Lightbox Modal (Click to make image big) -->
+  <div id="cert-lightbox-modal" class="cert-modal-backdrop" role="dialog" aria-modal="true" aria-label="Certificate Image Preview">
+    <div class="cert-modal-content">
+      <button id="cert-modal-close-btn" class="cert-modal-close" aria-label="Close certificate preview" onclick="closeCertModal()">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <img id="cert-modal-image" class="cert-modal-img" src="" alt="Certificate Preview" onclick="event.stopPropagation()">
+      <p id="cert-modal-caption" class="mt-3 text-center text-sm font-medium text-white/90 drop-shadow"></p>
+    </div>
+  </div>
 </body>
 </html>

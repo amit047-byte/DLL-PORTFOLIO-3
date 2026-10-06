@@ -96,4 +96,50 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
+
+  // 6. Certificate Lightbox Modal (Click to expand)
+  const certModal = document.getElementById('cert-lightbox-modal');
+  const certModalImg = document.getElementById('cert-modal-image');
+  const certModalTitle = document.getElementById('cert-modal-caption');
+  const certModalClose = document.getElementById('cert-modal-close-btn');
+
+  window.openCertModal = function(src, title, altText) {
+    if (!certModal || !certModalImg) return;
+    certModalImg.src = src;
+    certModalImg.alt = altText || title || 'Certificate Preview';
+    if (certModalTitle) certModalTitle.textContent = title || '';
+    certModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeCertModal = function() {
+    if (!certModal) return;
+    certModal.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  certModalClose?.addEventListener('click', window.closeCertModal);
+
+  // Close when clicking outside image
+  certModal?.addEventListener('click', (e) => {
+    if (e.target === certModal || e.target.id === 'cert-lightbox-modal') {
+      window.closeCertModal();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && certModal?.classList.contains('active')) {
+      window.closeCertModal();
+    }
+  });
+
+  // Attach listener to any .cert-expandable element
+  document.querySelectorAll('.cert-expandable').forEach((elem) => {
+    elem.addEventListener('click', () => {
+      const src = elem.getAttribute('data-cert-src') || elem.querySelector('img')?.getAttribute('src');
+      const title = elem.getAttribute('data-cert-title') || '';
+      if (src) window.openCertModal(src, title);
+    });
+  });
 });
