@@ -813,43 +813,6 @@
   <!-- Botpress Webchat Integration -->
   <script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js"></script>
   <script src="https://files.bpcontent.cloud/2026/09/30/03/20260930032717-WGO53VE7.js" defer></script>
-  <script>
-    // Safeguard: Ensure Botpress is initialized even if the external config script is blocked by an ad-blocker or defer timing
-    window.addEventListener('load', function() {
-      function startBot() {
-        if (window.botpress && !window.botpress.initialized && typeof window.botpress.init === 'function') {
-          window.botpress.init({
-            botId: "f5a14552-e933-446b-bc19-f604148eaa2b",
-            configuration: {
-              version: "v2",
-              website: {},
-              email: {},
-              phone: {},
-              termsOfService: {},
-              privacyPolicy: {},
-              feedbackEnabled: true,
-              footer: "[⚡ by Botpress](https://botpress.com/?from=webchat)",
-              allowFileUpload: true,
-              soundEnabled: true,
-              conversationHistory: true,
-              homePageEnabled: true,
-              welcomeHeading: "Hi there, how can we help?",
-              welcomeSubtitle: "Tap a starting point or ask in your own words.",
-              conversationStartersEnabled: false,
-              conversationStarters: [],
-              conversationStartersDisplayStyle: "cards",
-              citationsEnabled: true,
-              agentPresenceEnabled: true
-            },
-            clientId: "b4ad7f73-e419-42db-b8ce-7f36d5d58289"
-          });
-        }
-      }
-      startBot();
-      setTimeout(startBot, 600);
-      setTimeout(startBot, 2000);
-    });
-  </script>
 
   <script src="script.js?v=3.1"></script>
   <script>
