@@ -130,16 +130,6 @@ svg.sun-icon, svg.moon-icon {
   max-height: 1rem;
 }
 
-/* Ensure Botpress Webchat widget and popup sits on highest z-index */
-.bpChatContainer,
-.bpWebchat,
-[data-name="webchat"],
-#webchat-root,
-.bpCustomToggleWebchat,
-.bpFABWebchat {
-  z-index: 2147483647 !important;
-}
-
 /* ===================================================
    Skill Progress Sliding Bar Animation
    =================================================== */
